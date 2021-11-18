@@ -1,0 +1,17 @@
+.lightbox { display: none; }
+
+.visible { display: block !important; }
+
+.lightboxWrapper {
+    margin: 5em;
+    background-color: darkgrey;
+    color: black;
+    img {
+        align-items: center;
+
+    }
+    p {
+        color: black;
+    }
+
+}
