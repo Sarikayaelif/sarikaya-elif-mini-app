@@ -1,7 +1,9 @@
-import TheAudioComponent from "./TheAudioComponent.js";
-import AudioComponent from "./TheAudioComponent.js";
-import TheVideoComponent from "./TheVideoComponent.js";
-import VideoComponent from "./TheVideoComponent.js";
+import TheInteriorComponent from "./TheInteriorComponent.js";
+import TheExteriorComponent from "./TheExteriorComponent.js";
+import TheAccessoriesComponent from "./TheAccessoriesComponent.js";
+import InteriorComponent from "./TheInteriorComponent.js";
+import ExteriorComponent from "./TheExteriorComponent.js";
+import AccessoriesComponent from "./TheAccessoriesComponent.js";
 
 export default {
     name: "TheLightboxComponent",
@@ -10,21 +12,21 @@ export default {
 
     computed: {
         activeComponent:function() {
-            return `${this.piece.mediaType + "Component"}`;
+            return `${this.piece.type + "Component"}`;
         }
     },
         
 
     template:`
         <section class="lightboxWrapper">
-            <i @click="closeMe" class="fa-solid fa-circle-xmark"></i>
-            <component v-if= "piece.mediaType" :is="activeComponent"></component>
+            <i @click="closeMe" class="fa-solid fa-circle-xmark" ></i>
             
             <img :src='"images/" + piece.banner' :alt="piece.model">
-            <h1>Model: {{piece.model}}</h1>
-
-            <p>{{piece.description}}</p>
-            
+            <div id="description">
+                <h1>Model: {{piece.model}}</h1>
+                <p>{{piece.description}}</p>
+            </div>
+            <component v-if= "piece.type" :is="activeComponent"></component>
         </section>
          `
     ,
@@ -36,7 +38,8 @@ export default {
         }
     },
     components: {
-        AudioComponent: TheAudioComponent,
-        VideoComponent: TheVideoComponent
+        InteriorComponent: TheInteriorComponent,
+        ExteriorComponent: TheExteriorComponent,
+        AccessoriesComponent: TheAccessoriesComponent
     }
 }

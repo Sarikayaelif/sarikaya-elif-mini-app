@@ -3,15 +3,43 @@
 .visible { display: block !important; }
 
 .lightboxWrapper {
-    margin: 5em;
+    
     background-color: darkgrey;
     color: black;
+    margin: 0 auto;
+    width: fit-content;
     img {
-        align-items: center;
+   
+        align-content: center;
+        margin: 0 auto;
+        width: 100%;
 
     }
-    p {
-        color: black;
+    #description {
+        margin: 0 auto;
+        width: 620px;
+        h1 {
+            margin: 10px 10px 0 10px;
+            text-align: center;
+        }
+        p {
+            margin: 10px 10px 0 10px;
+            color: black;
+            text-align: center;
+            line-height: 2em;
+        }
     }
-
+    
+ .fa-solid {
+    
+     margin: 10px;
+ }
+}
+.interior, .exterior, .accessories {
+    margin: 0 auto;
+    width: fit-content;
+    img {
+        width: 200px;
+        margin: 10px;
+    }
 }
